@@ -22,9 +22,25 @@
             <div>
                 Users Rated: {{ this.users_rated }}
             </div>
+            <!--
+            <div>
+                gid: {{ this.gid }}
+            </div>-->
+                <h4><b>Comments:</b></h4>
 
-            
+
         {{/each}}
+        
+        
+        <h4><b>Comments:</b></h4>
+         {{#each comments}}
+            <div>
+            {{this.c_text}}
+            </div>
+         {{/each}}
+         
+
+         <!--{{comments.c_text}}-->
        
         <br><br>
         <form action="index.html"method="get">
@@ -32,5 +48,21 @@
              <input type="submit" value = "Back">
          </div>
          </form>
+                 <table>
+            <tr>
+                <td>
+                    <form action="">
+                        <input type="hidden" value="{{prev_offset}}" name="offset" min=1>
+                        <button type="submit"> Prev </button>
+                    </form>
+                </td>
+                <td>
+                    <form action="">
+                       <input type="hidden" value="{{next_offset}}" name="offset" min=1>
+                        <button type="submit"> Next </button>
+                    </form>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>
